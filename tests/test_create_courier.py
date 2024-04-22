@@ -16,8 +16,9 @@ class TestCreateCourier:
     @allure.description('Проверяем ожидаемую ошибку, удаляем курьера')
     def test_registration_double_courier_failed(self):
         courier = Courier()
-        assert courier.courier_double_registration()["status_code"] == StatusCodesCourier.login_is_busy["status_code"]
-        assert courier.courier_double_registration()["response_text"] == StatusCodesCourier.login_is_busy["response_text"]
+        result = courier.courier_double_registration()
+        assert result["status_code"] == StatusCodesCourier.login_is_busy["status_code"]
+        assert result["response_text"] == StatusCodesCourier.login_is_busy["response_text"]
 
     @allure.title('Создание курьера без обязательных полей Login/Password')
     @allure.description('Создание курьера без обязательных полей Login/Password')
