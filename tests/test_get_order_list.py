@@ -1,7 +1,7 @@
 import allure
 import requests
-from data import EndPoints, StatusCodesCourier
-
+from data import StatusCodesCourier
+from urls import EndPoints
 
 class TestOrdersList:
 

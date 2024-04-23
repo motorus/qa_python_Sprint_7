@@ -1,9 +1,7 @@
-import json
 import allure
 import pytest
-import requests
-
-from data import Order, StatusCodesCourier
+from data import StatusCodesCourier
+from helps import Order
 
 
 class TestOrderCreate:

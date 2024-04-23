@@ -2,7 +2,9 @@ import allure
 import pytest
 import requests
 
-from data import Courier, EndPoints, StatusCodesCourier, NewCourierCreds
+from data import StatusCodesCourier
+from helps import Courier, NewCourierCreds
+from urls import EndPoints
 
 
 class TestLoginCourier:
@@ -27,7 +29,7 @@ class TestLoginCourier:
 
     @allure.title('Авторизации курьера с несуществующими данными')
     @allure.description('Авторизация с несуществующими данными')
-    def test_courier_login_without_null_login_failed(self):
+    def test_courier_login_with_incorrect_creds_failed(self):
         courier_data = NewCourierCreds.generate_creds_set("incorrect")
         response = requests.post(EndPoints.login_courier, data=courier_data)
         assert response.status_code == StatusCodesCourier.courier_login_incorrect_creds["status_code"]

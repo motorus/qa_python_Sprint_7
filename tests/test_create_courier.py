@@ -1,7 +1,9 @@
 import allure
 import pytest
 import requests
-from data import Courier, StatusCodesCourier, NewCourierCreds, EndPoints
+from data import StatusCodesCourier
+from helps import Courier, NewCourierCreds
+from urls import EndPoints
 
 
 class TestCreateCourier:
